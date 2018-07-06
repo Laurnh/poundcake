@@ -1,0 +1,55 @@
+/* unvisited link */
+a:link {
+    color: #7F2279;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: #7F2279;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: black;
+    text-decoration: none;
+}
+body {
+	background-image: url({{ url_for('static', filename='img/bg_gray_storm2.jpg') }});
+	margin: 0;
+	background-attachment: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+}
+div#navigationbar{
+	background-color: #DEDADD;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Allan';
+	font-weight: bold;
+	font-size: 30px;
+	color: #7F2279;
+}
+div#loading{
+	display: none;
+	cursor: wait;
+	text-align: center;
+}
+div#main {
+	background-color: white;
+	width: 70%;
+	border: 5px solid gray;
+	padding: 25px;
+	margin: 25px auto;
+	text-align: center;
+	margin-top: 90px;
+}

@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+    <title>POUND CAKE</title>
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static', filename='img/p_favicon/apple-touch-icon.png') }}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/p_favicon/favicon-32x32.png') }}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/p_favicon/favicon-16x16.png') }}">
+	<link rel="manifest" href="{{ url_for('static', filename='img/p_favicon/site.webmanifest') }}">
+	<link rel="mask-icon" href="{{ url_for('static', filename='img/p_favicon/safari-pinned-tab.svg') }}" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+    <link href='https://fonts.googleapis.com/css?family=Allan' rel='stylesheet'>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<style>
+		/* unvisited link */
+		a:link {
+		    color: #7F2279;
+		    text-decoration: none;
+		}
+
+		/* visited link */
+		a:visited {
+		    color: #7F2279;
+		    text-decoration: none;
+		}
+
+		/* mouse over link */
+		a:hover {
+		    color: black;
+		    text-decoration: none;
+		}
+
+		/* selected link */
+		a:active {
+		    color: black;
+		    text-decoration: none;
+		}
+		body {
+			background-image: url({{ url_for('static', filename='img/bg_gray_storm2.jpg') }});
+			margin: 0;
+			background-attachment: fixed;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		div#navigationbar{
+			background-color: #DEDADD;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			font-family: 'Allan';
+			font-weight: bold;
+			font-size: 30px;
+			color: #7F2279;
+		}
+		div#loading{
+			display: none;
+			cursor: wait;
+			text-align: center;
+		}
+		div#main {
+			background-color: white;
+			width: 70%;
+			border: 5px solid gray;
+			padding: 25px;
+			margin: 25px auto;
+			text-align: center;
+			margin-top: 90px;
+		}
+	</style>
+</head>
+<body>
+<div id="navigationbar" style="text-align:left;">
+	<a href="{{ url_for('index') }}"><img src="/static/img/cake_black-white2.png" width="50" style="border: 0; padding-left: 10px; padding-right: 10px; padding-top: 5px; vertical-align: middle;"/></a>
+	<span style="vertical-align: middle; padding-right: 30px;">
+		<a href="{{ url_for('index') }}">..home..</a>
+	</span>
+	<span style="vertical-align: middle;">
+		<a href="{{ url_for('sample_index') }}">..sample images..</a>
+	</span>
+	<span style="float:right;">
+		<a href="http://www.linkedin.com/in/LHolzbauer"><img src="/static/img/icon_linkedin.png" width="35" style="border: 0; padding-right: 5px;"/></a>
+		<a href="http://www.github.com/laurnh"><img src="/static/img/icon_github_transparent.png" width="35" style="border: 0; padding-top: 5px; padding-right: 5px;"/></a>
+		<a href="http://www.followmetoouter.space"><img src="/static/img/icon_webpage.png" width="35" style="border: 0; padding-top: 5px; padding-right: 10px;"/></a>
+		</span>
+</div>
+
+<div id="main">
+	<align=center>
+	<img src="/static/img/poundcake_title_gray.png" width="500"/><br>
+	Unsure of how to use something in the gym?
+	<br>Upload your mystery photo here! We'll show you how to use it.<br><br>
+	<img src="/static/img/CrossFit-woman-Box-Jump.jpg" width="300"/><br>
+	<form id='upload_form' method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
+    	<input type='file' name='file' accept='image/*'>
+    	<input type="submit" value='send!' onclick="$('#loading').show();">
+	</form>
+	<p>Or upload some <a href = "{{ url_for('sample_index') }}">sample images.</a></p>
+<div id="loading">Pounding it out...</div></div>
+</body>
+</html>
